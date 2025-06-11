@@ -6,6 +6,21 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 **Crystal Rush** - A 2D Flutter mobile game featuring an endless runner/collector gameplay where players jump between platforms, collect crystals, and avoid obstacles. Built using the Flame game engine for optimal 2D performance.
 
+### Current Implementation Status
+- ✅ **Core Game Engine**: Flame-based game loop with collision detection
+- ✅ **Player Character**: Physics-based movement with jump mechanics
+- ✅ **Platform System**: Procedural generation and collision handling
+- ✅ **Crystal Collection**: Scoring system with visual feedback
+- ✅ **UI System**: Menu, game overlay, pause, and game over screens
+- ✅ **Game States**: Complete state management (menu/playing/paused/game over)
+- ✅ **Progressive Difficulty**: Speed increases over time
+- ✅ **Mobile Controls**: Touch-optimized tap-to-jump controls
+
+### Repository Information
+- **GitHub**: https://github.com/Sebastiangmz/crystal-rush-flutter
+- **Main Branch**: master
+- **Last Updated**: Initial implementation with full playable game
+
 ## Development Commands
 
 ```bash
@@ -41,18 +56,21 @@ dart format lib/ test/        # Format code
 - **Game State Management**: Centralized state handling for menus, gameplay, and settings
 
 ### Core Game Systems
-- **Spawning System**: Procedural generation of platforms, crystals, and obstacles
-- **Physics System**: Collision detection, gravity, and movement mechanics
-- **Progression System**: XP, leveling, currency, and unlockables
-- **Audio System**: Background music, sound effects, and audio management
+- **Spawning System**: ✅ Procedural generation of platforms and crystals
+- **Physics System**: ✅ Collision detection, gravity, and movement mechanics
+- **Game State System**: ✅ Menu, playing, paused, and game over states
+- **Scoring System**: ✅ Crystal collection and score tracking
+- **Camera System**: ✅ Smooth player following and viewport management
+- **Progression System**: 🔄 XP, leveling, currency (future implementation)
+- **Audio System**: 🔄 Background music, sound effects (future implementation)
 
-### Key Dependencies
+### Key Dependencies (Currently Implemented)
 ```yaml
-flame: ^1.10.0           # 2D game engine
-flame_audio: ^2.0.0      # Audio management
-shared_preferences: ^2.0.0  # Local storage
-google_mobile_ads: ^3.0.0   # Monetization
-firebase_core: ^2.0.0       # Analytics/Crashlytics
+flame: ^1.10.0                  # ✅ 2D game engine (core functionality)
+flame_audio: ^2.0.0            # 🔄 Audio management (added but not used yet)
+shared_preferences: ^2.2.0     # 🔄 Local storage (added but not used yet)
+google_mobile_ads: ^3.0.0      # 🔄 Monetization (future implementation)
+firebase_core: ^2.24.0         # 🔄 Analytics/Crashlytics (future implementation)
 ```
 
 ### File Organization
@@ -69,12 +87,20 @@ lib/
 ```
 
 ### Game Mechanics Implementation
-- **Progressive Difficulty**: Speed and spawn rates increase based on score/time
-- **Power-up System**: Temporary abilities with visual indicators and timers
-- **Collection Mechanics**: Crystal gathering with particle effects and score feedback
-- **Daily Challenges**: Time-based objectives stored locally with reset logic
+- **Progressive Difficulty**: ✅ Speed increases based on time survived
+- **Collection Mechanics**: ✅ Crystal gathering with score feedback
+- **Collision System**: ✅ Platform landing and crystal collection detection
+- **Camera System**: ✅ Smooth following player movement
+- **Game Over Conditions**: ✅ Falling off screen or getting left behind
 
-### Monetization Strategy
+### Future Features (Not Yet Implemented)
+- **Power-up System**: Temporary abilities with visual indicators and timers
+- **Particle Effects**: Visual feedback for collections and explosions
+- **Audio System**: Background music and sound effects
+- **Daily Challenges**: Time-based objectives stored locally with reset logic
+- **Enemy System**: Obstacles and moving hazards
+
+### Monetization Strategy (Future Implementation)
 - **Rewarded Video Ads**: Optional ads for power-ups, extra lives, and currency
 - **Cosmetic IAPs**: Character skins, particle trails, and visual customizations
 - **Battle Pass**: Seasonal progression system with free and premium tiers
